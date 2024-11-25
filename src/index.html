@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        thead {
+            background-color: #f2f2f2;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="print">Click to show all sys info</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>System Information</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody id="sys-info">
+            
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById('print').addEventListener('click', () => {
+            const sysInfo = window.systemInfo;
+            const tbody = document.getElementById('sys-info');
+            tbody.innerHTML = `
+                <tr><td>Platform</td><td>${sysInfo.platform}</td></tr>
+                <tr><td>CPU Architecture</td><td>${sysInfo.arch}</td></tr>
+                <tr><td>Release</td><td>${sysInfo.release}</td></tr>
+                <tr><td>CPU</td><td>${sysInfo.cpus}</td></tr>
+                <tr><td>Total Memory</td><td>${sysInfo.totalmem}</td></tr>
+                <tr><td>Free Memory</td><td>${sysInfo.freemem}</td></tr>
+            `;
+        });
+    </script>
+</body>
+</html>
