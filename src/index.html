@@ -33,7 +33,7 @@
             </tr>
         </thead>
         <tbody id="sys-info">
-            
+            <!-- System information will be inserted here -->
         </tbody>
     </table>
 
@@ -45,9 +45,21 @@
                 <tr><td>Platform</td><td>${sysInfo.platform}</td></tr>
                 <tr><td>CPU Architecture</td><td>${sysInfo.arch}</td></tr>
                 <tr><td>Release</td><td>${sysInfo.release}</td></tr>
-                <tr><td>CPU</td><td>${sysInfo.cpus}</td></tr>
                 <tr><td>Total Memory</td><td>${sysInfo.totalmem}</td></tr>
                 <tr><td>Free Memory</td><td>${sysInfo.freemem}</td></tr>
+                <tr><td>Type</td><td>${sysInfo.type}</td></tr>
+                <tr><td>User Info</td><td>${JSON.stringify(sysInfo.userInfo)}</td></tr>
+                <tr><td>Home Directory</td><td>${sysInfo.homedir}</td></tr>
+                <tr><td>Hostname</td><td>${sysInfo.hostname}</td></tr>
+                <tr><td>Network Interfaces</td><td>${JSON.stringify(sysInfo.networkInterfaces)}</td></tr>
+                <tr><td>Machine</td><td>${sysInfo.machine}</td></tr>
+                <tr><td>Temp Directory</td><td>${sysInfo.tempdir}</td></tr>
+                <tr><td>Uptime</td><td>${sysInfo.uptime}</td></tr>
+                <tr><td>Version</td><td>${sysInfo.version}</td></tr>
+                <tr><td>Load Average</td><td>${sysInfo.loadavg}</td></tr>
+                <tr><td>Endianness</td><td>${sysInfo.endianness}</td></tr>
+                <tr><td>Constants</td><td>${JSON.stringify(sysInfo.constants)}</td></tr>
+                <tr><td>System Drive</td><td>${sysInfo.systemDrive}</td></tr>
             `;
         });
     </script>
